@@ -12,6 +12,8 @@ int hash(char *key, int len)
     int b = 610933081;
     int a = 620872817;
 
+    if (key == NULL)
+        return 0;
     for (int i = 0; key[i]; i++) {
         res = res * a + key[i] * b;
         a *= b;

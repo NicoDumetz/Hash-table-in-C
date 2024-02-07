@@ -13,11 +13,11 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
     hashtable_t *new;
     int i;
 
-    if (len <= 0)
+    if (len <= 0 || hash == NULL)
         return NULL;
     new = malloc(sizeof(hashtable_t) * (len + 1));
-    if (!new)
-        return 0;
+    if (new == NULL)
+        return NULL;
     for (i = 0; i < len; i++) {
         new[i].hash_data = -1;
         new[i].hash = hash;

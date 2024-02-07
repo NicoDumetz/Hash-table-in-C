@@ -20,7 +20,7 @@ char *ht_search(hashtable_t *ht, char *key)
     int index;
     hashtable_t *disp;
 
-    if (!ht)
+    if (!ht || key == NULL)
         return 0;
     hasher = ht[0].hash(key, 4);
     index = hasher % len_array_hashtable(ht);

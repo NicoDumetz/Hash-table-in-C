@@ -39,13 +39,15 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     hashtable_t *new;
     unsigned int modulo;
 
-    if (size == 0)
+    if (size == 0 || key == NULL || value == NULL)
         return 84;
     steak = ht[0].hash(key, size);
     modulo = steak % size;
     if (existing_hash(ht, steak, modulo, value))
         return 0;
     new = malloc(sizeof(hashtable_t));
+    if (new == NULL)
+        return 0;
     new->hash = ht[0].hash;
     new->hash_data = steak;
     new->value = my_strdup(value);
