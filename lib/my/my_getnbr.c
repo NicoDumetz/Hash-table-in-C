@@ -9,7 +9,7 @@ int my_getnbr(char const *str)
 {
     int nbr = 0;
     int i = 0;
-    int sign = (str[i] == '-') ? -1: 1;
+    int sign = (str[i] == '-') ? -1 : 1;
 
     if (str[i] == '-' || str[i] == '+')
         i++;
