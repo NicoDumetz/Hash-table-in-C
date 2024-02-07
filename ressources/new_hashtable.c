@@ -14,8 +14,10 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
     int i;
 
     new = malloc(sizeof(hashtable_t) * (len + 1));
-    for (i = 0; i < len; i++)
+    for (i = 0; i < len; i++) {
         new[i].hash_data = -1;
+        new[i].hash = hash;
+    }
     new[i].hash_data = -1000;
     return new;
 }
