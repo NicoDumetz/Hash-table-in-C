@@ -13,7 +13,8 @@ static void disp_linked(hashtable_t *ht, int i)
     hashtable_t *disp = &ht[i];
 
     for (int index = 0; disp != NULL; index++) {
-        my_printf("> %d - %s\n", disp->hash_data, disp->value);
+        if (disp->hash_data != -1)
+            my_printf("> %d - %s\n", disp->hash_data, disp->value);
         disp = disp->next;
     }
 }
