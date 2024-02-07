@@ -1,0 +1,58 @@
+Project Title: Hash Table Implementation in C
+
+Objective:
+The objective of this project is to implement a hash table data structure along with a custom hash function in C. The hash table should provide functionalities for creating, inserting, deleting, searching, and dumping elements. The hash function should meet certain criteria to ensure its effectiveness in distributing data within the hash table.
+
+Hash Function:
+
+    A custom hash function int hash(char *key, int len); must be developed.
+    The hash function should convert input data into output strings or positive integers.
+    Criteria for a good hash function include:
+        Output string is entirely determined by the hashed data.
+        All input data is used in hashing.
+        Two almost identical inputs give very different output values.
+        The hash function evenly distributes data in the hash table.
+
+Hash Table Structure:
+
+    A hashtable_t structure will represent the hash table.
+    The new_hashtable function creates a new hash table with a given size and hash function.
+    The delete_hashtable function deallocates memory associated with the hash table.
+    The hash table will handle collisions using separate chaining, i.e., by creating a list at the index to store multiple elements.
+
+Hash Table Functions:
+
+    int ht_insert(hashtable_t *ht, char *key, char *value);: Insert a new element into the hash table.
+    int ht_delete(hashtable_t *ht, char *key);: Delete a value from the hash table.
+    char *ht_search(hashtable_t *ht, char *key);: Search for a value in the hash table based on the key.
+    void ht_dump(hashtable_t *ht);: Display the current state of the hash table.
+
+Example Usage:
+
+c
+
+#include <stdio.h>
+#include "hashtable.h"
+
+int main(void) {
+    hashtable_t *ht = new_hashtable(&hash, 4);
+    ht_insert(ht, "Vision", "./Documents/Tournament/Modules/Vision");
+    ht_insert(ht, "Kratos", "./Trash/Hollidays_Pics/.secret_folder/kratos.ai");
+    ht_insert(ht, "<3", "+33 6 31 45 61 23 71");
+    ht_dump(ht);
+    return 0;
+}
+
+Testing:
+
+    Prompt files containing predefined commands will be used for testing the implementation.
+    Testing will cover insertion, deletion, searching, and handling collisions in the hash table.
+
+Contributing:
+Contributions to this project are welcome. Feel free to open an issue or submit a pull request on the GitHub repository.
+
+License:
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+Authors:
+Nicolas Dumetz
