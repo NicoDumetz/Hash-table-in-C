@@ -20,7 +20,7 @@ char *ht_search(hashtable_t *ht, char *key)
     int index = hasher % len_array_hashtable(ht);
     hashtable_t *disp = &ht[index];
 
-    for (int index = 0; disp->hash_data != -1; index++) {
+    for (int index = 0; disp->hash_data != NULL; index++) {
         if (hasher == disp->hash_data)
             return disp->value;
         disp = disp->next;
