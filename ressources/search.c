@@ -10,12 +10,14 @@ int len_array_hashtable(hashtable_t *ht)
 {
     int i = 0;
 
-    for (i; ht[i].hash_data != -1000; i++);
+    for (; ht[i].hash_data != -1000; i++);
     return i;
 }
 
 char *ht_search(hashtable_t *ht, char *key)
 {
+    if (!ht)
+        return 0;
     int hasher = ht[0].hash(key, 4);
     int index = hasher % len_array_hashtable(ht);
     hashtable_t *disp = &ht[index];

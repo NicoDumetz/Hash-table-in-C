@@ -14,6 +14,8 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
     int i;
 
     new = malloc(sizeof(hashtable_t) * (len + 1));
+    if (!new)
+        return 0;
     for (i = 0; i < len; i++) {
         new[i].hash_data = -1;
         new[i].hash = hash;

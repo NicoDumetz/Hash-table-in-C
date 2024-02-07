@@ -22,6 +22,8 @@ int hash(char *key, int len)
 
 void delete_hashtable(hashtable_t *ht)
 {
+    if (!ht)
+        return;
     hashtable_t *current;
     hashtable_t *temp;
     int len = len_array_hashtable(ht);
