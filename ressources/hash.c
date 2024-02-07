@@ -13,7 +13,7 @@ int hash(char *key, int len)
    int a = 620872817;
 
    for( int i = 0; key[i]; i++) {
-      res = res * a + key[i];
+      res = res * a + key[i] * b;
       a = a * b;
    }
    res = res < 0 ? res * -1: res;
