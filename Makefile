@@ -23,11 +23,11 @@ all:	$(NAME)
 required:
 	make -C lib/my
 
-test: $(NAME) required
+test: required $(NAME)
 	gcc main.c $(CFLAGS)
 	./a.out
 
-$(NAME):	$(OBJ) required
+$(NAME): required $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 clean:
