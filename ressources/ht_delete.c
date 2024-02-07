@@ -9,10 +9,10 @@
 
 static unsigned int hashtable_size(hashtable_t *ht)
 {
-    if (!ht)
-        return 0;
     unsigned int i;
 
+    if (!ht)
+        return 0;
     for (i = 0; ht[i].hash_data != -1000; i++);
     return i;
 }

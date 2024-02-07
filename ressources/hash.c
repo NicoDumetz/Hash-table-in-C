@@ -22,12 +22,13 @@ int hash(char *key, int len)
 
 void delete_hashtable(hashtable_t *ht)
 {
-    if (!ht)
-        return;
     hashtable_t *current;
     hashtable_t *temp;
-    int len = len_array_hashtable(ht);
+    int len;
 
+    if (!ht)
+        return;
+    len = len_array_hashtable(ht);
     for (int i = 0; i < len; i++) {
         current = ht[i].next;
         for (int i = 0; current != NULL; i++) {

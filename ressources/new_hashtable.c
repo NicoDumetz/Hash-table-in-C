@@ -12,7 +12,7 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 {
     hashtable_t *new;
     int i;
-    
+
     if (len <= 0)
         return NULL;
     new = malloc(sizeof(hashtable_t) * (len + 1));
