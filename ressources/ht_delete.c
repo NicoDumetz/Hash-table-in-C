@@ -24,7 +24,7 @@ int ht_delete(hashtable_t *ht, char *key)
     unsigned int modulo;
     hashtable_t *previous;
 
-    if (size == 0)
+    if (size == 0 || key == NULL)
         return 84;
     steak = ht[0].hash(key, size);
     modulo = steak % size;
