@@ -18,6 +18,7 @@
     #include <wchar.h>
 typedef struct hashtable_s
 {
+    int (*hash)(char *, int);
     int hash_data;
     char *value;
     struct hashtable_s *next;
