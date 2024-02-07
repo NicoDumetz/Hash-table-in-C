@@ -20,7 +20,7 @@ typedef struct hashtable_s
 {
     int hash_data;
     char *value;
-    struct hashtable_s *next;
+    hashtable_s *next;
 } hashtable_t;
 
 int hash(char *key, int len);

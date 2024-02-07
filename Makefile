@@ -6,7 +6,6 @@
 ##
 
 SRC	=	ressources/hash.c \
-		ressources/disp.c \
 
 OBJ	=	$(SRC:.c=.o)
 
