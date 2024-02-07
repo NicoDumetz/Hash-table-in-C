@@ -13,12 +13,10 @@ CFLAGS += -g
 
 NAME 	= 	libhashtable.a
 
-LDFLAGS = -lm
-
 all:	$(NAME)
 
 test: $(NAME)
-	gcc main.c -L./ -lmy
+	gcc main.c -L./ -lhashtable
 	./a.out
 
 $(NAME):	$(OBJ)

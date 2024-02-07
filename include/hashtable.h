@@ -6,8 +6,16 @@
 */
 
 #ifndef HASHTABLE_H
-#define HASHTABLE_H
-
+    #define HASHTABLE_H
+    #include <unistd.h>
+    #include <stdio.h>
+    #include <stdarg.h>
+    #include <stdlib.h>
+    #include <fcntl.h>
+    #include <errno.h>
+    #include <stdint.h>
+    #include <stddef.h>
+    #include <wchar.h>
 typedef struct hashtable_s
 {
 
