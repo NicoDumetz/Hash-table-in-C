@@ -6,26 +6,32 @@
 ##
 
 SRC	=	ressources/hash.c \
+		ressources/disp.c \
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS += -g
+CFLAGS += -g -L./ -lhashtable -Llib/my -lmy
 
 NAME 	= 	libhashtable.a
 
 all:	$(NAME)
 
-test: $(NAME)
-	gcc main.c -L./ -lhashtable
+required:
+	make -C lib/my
+
+test: $(NAME) required
+	gcc main.c $(CFLAGS)
 	./a.out
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) required
 	ar rc $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
+	make clean -C lib/my
 
 fclean:		clean
 	rm -f $(NAME)
+	make fclean -C lib/my
 
 re:	fclean all
