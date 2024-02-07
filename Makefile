@@ -8,7 +8,8 @@
 SRC	=	ressources/hash.c \
 		ressources/disp.c \
 		ressources/new_hashtable.c \
-		ressources/search.c
+		ressources/search.c \
+		ressources/ht_insert.c
 
 OBJ	=	$(SRC:.c=.o)
 

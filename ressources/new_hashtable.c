@@ -17,7 +17,9 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
     for (i = 0; i < len; i++) {
         new[i].hash_data = -1;
         new[i].hash = hash;
+        new[i].next = 0;
     }
     new[i].hash_data = -1000;
+    new[i].next = 0;
     return new;
 }
