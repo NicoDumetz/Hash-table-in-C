@@ -20,7 +20,7 @@ static void disp_linked(hashtable_t *ht, int i)
 
 void ht_dump(hashtable_t *ht)
 {
-    for (int i = 0; &ht[i]; i++) {
+    for (int i = 0; ht[i].hash_data != -1000; i++) {
         my_printf("[%d]:\n", i);
         disp_linked(ht, i);
     }
