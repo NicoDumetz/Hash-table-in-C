@@ -19,3 +19,21 @@ int hash(char *key, int len)
     res = res < 0 ? res * - 1 : res;
     return res;
 }
+
+void delete_hashtable(hashtable_t *ht)
+{
+    hashtable_t *current;
+    hashtable_t *temp;
+    int len = len_array_hashtable(ht);
+
+    for (int i = 0; i < len; i++) {
+        current = ht[i].next;
+        for (int i = 0; current != NULL; i++) {
+            temp = current;
+            current = current->next;
+            free(temp->value);
+            free(temp);
+        }
+    }
+    free(ht);
+}
